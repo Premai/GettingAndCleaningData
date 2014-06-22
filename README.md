@@ -20,7 +20,21 @@ Extracts only the measurements on the mean and standard deviation for each measu
 Uses descriptive activity names to name the activities in the data set.
 Appropriately labels the data set with descriptive activity names.
 Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-Good luck!
+
+## Steps already done
+In the run_analysis.R have commented out the steps of downloading the zip file and unzipping
+as I have uploaded the directory to the GitHub repo.
+
+## Things to consider before running script locally on your desktop
+Please download the script run_analysis.R and set the work directory to the folder in which the
+R file and data folder (unzipped from the file downloaded) is present.
+Also I have named the datafolder as "UCI HAR Dataset", if you have named it different please modify run_analysis.R accordingly before executing.
 
 ## To Produce the tidy dataset  
-Run the R script run_analysis.R. Output will be Tidy dataset file DSSmartphonesTidy.txt (tab-delimited text)
+Run the R script run_analysis.R after modifications if any required. 
+
+## Output files are
+1. Tidy dataset file DSSmartphonesTidy.txt (tab-delimited text)
+2. codebook.md 
+3. codebook.html
+

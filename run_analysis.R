@@ -1,6 +1,24 @@
 #set the UCI HAR Dataset as path to be run from under Github
+path <- setwd(getwd())
+
+#download the zip file to the current working directory as the file is already downloaded and
+#unzipped commented the below steps 
+
+#url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+#f <- "HARDataset.zip"
+#if (!file.exists(path)) {
+#  dir.create(path)
+#}
+#download.file(url, file.path(path, f))
+
+#Steps to unzip the zip file commenting this as i have uploaded the folder
+
+#executable <- file.path("C:", "Program Files", "7-Zip", "7z.exe")
+#parameters <- "x"
+#cmd <- paste(paste0("\"", executable, "\""), parameters, paste0("\"", file.path(path, f), "\""))
+#system(cmd)
+
 pathIn <- file.path(path, "UCI HAR Dataset")
-list.files(pathIn, recursive = TRUE)
 
 #Read Subject Files from train and test folders respectively under UCI HAR DATASET folder
 dfSubjectTrain <- fread(file.path(pathIn, "train", "subject_train.txt")) 
@@ -108,5 +126,11 @@ setkey(dt, subject, activity, featDomain, featAcceleration, featInstrument,
        featJerk, featMagnitude, featVariable, featAxis)
 dtTidy <- dt[, list(count = .N, average = mean(value)), by = key(dt)]
 
-f <- file.path(path, "DSSmartphonesTidy.txt")
-write.table(dtTidy, f, quote = FALSE, sep = "\t", row.names = FALSE)
+#f <- file.path(path, "DSSmartphonesTidy.txt")
+#write.table(dtTidy, f, quote = FALSE, sep = "\t", row.names = FALSE)
+
+#Make codebook
+knit("makeCodebook.Rmd", output = "codebook.md", encoding = "ISO8859-1", quiet = TRUE)
+
+#Create html format
+markdownToHTML("codebook.md", "codebook.html")
