@@ -23,4 +23,4 @@ Creates a second, independent tidy data set with the average of each variable fo
 Good luck!
 
 ## To Produce the tidy dataset  
-Run the R script run_analysis.r. Output will be Tidy dataset file DSSmartphonesTidy.txt (tab-delimited text)
+Run the R script run_analysis.R. Output will be Tidy dataset file DSSmartphonesTidy.txt (tab-delimited text)
