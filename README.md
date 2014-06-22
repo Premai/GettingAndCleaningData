@@ -34,12 +34,19 @@ run_analysis.R --  R code to create tidy data
 
 ## Things to consider before running script locally on your desktop
 Please download the script run_analysis.R and set the work directory to the folder in which the
-data folder "UCI HAR Dataset" (unzipped from the https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) is present.
-The script access the following files in the working directory/UCI HAR Dataset
-activity_labels.txt
-features.txt
-test/
-train/
+data folder "UCI HAR Dataset" (unzipped from the https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) is present.       
+The script access the following files in the working directory/UCI HAR Dataset     
+* activity_labels.txt       
+* features.txt       
+* test/     
+   Subject_test.txt  
+   X_test.txt
+   y_test.txt  
+* train/     
+   Subject_train.txt   
+   X_train.txt  
+   y_train.txt  
+  
 
 ## Output files created under the working directory
 Tidy dataset file DSSmartphonesTidy.csv (comma separated)  
