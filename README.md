@@ -22,5 +22,5 @@ Appropriately labels the data set with descriptive activity names.
 Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 Good luck!
 
-
-Run the R script run_analysis.r. Outputs produced Tidy dataset file DSSmartphonesTidy.txt (tab-delimited text)
+## To Produce the tidy dataset  
+Run the R script run_analysis.r. Output will be Tidy dataset file DSSmartphonesTidy.txt (tab-delimited text)
