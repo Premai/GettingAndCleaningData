@@ -44,7 +44,7 @@ aggr.data <- aggregate(data.mean.std[, 3:ncol(data.mean.std)],
                                label = data.mean.std$label),
                        FUN=mean)
 
-# write the data for course upload
+# write the data 
 f <- file.path(path, "DSSmartphonesTidy.txt")
 write.table(aggr.data, f, row.names=F, sep = ",",quote=F)
 
