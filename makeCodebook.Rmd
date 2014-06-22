@@ -5,62 +5,121 @@ Codebook was generated on `r as.character(Sys.time())` during the same process t
 Variable list and descriptions
 ------------------------------
 
-Variable name    | Description
------------------|------------
-subject          | ID the subject who performed the activity for each window sample. Its range is from 1 to 30.
-activity         | Activity name
-featDomain       | Feature: Time domain signal or frequency domain signal (Time or Freq)
-featInstrument   | Feature: Measuring instrument (Accelerometer or Gyroscope)
-featAcceleration | Feature: Acceleration signal (Body or Gravity)
-featVariable     | Feature: Variable (Mean or SD)
-featJerk         | Feature: Jerk signal
-featMagnitude    | Feature: Magnitude of the signals calculated using the Euclidean norm
-featAxis         | Feature: 3-axial signals in the X, Y and Z directions (X, Y, or Z)
-featCount        | Feature: Count of data points used to compute `average`
-featAverage      | Feature: Average of each variable for each activity and each subject
+subject                    1st Column
+    Subject number
+                           1..30 .Unique identifier assigned to each subject
+                           who performed the activity for each window sample.
 
-Dataset structure
------------------
+label                      2nd Column
+    Acitivity label
+                           "WALKING"
+                           "WALKING_UPSTAIRS"
+                           "WALKING_DOWNSTAIRS"
+                           "SITTING"
+                           "STANDING"
+                           "LAYING"
+                           
+tbodyaccmeanx  
+tbodyaccmeany	
+tbodyaccmeanz	
+tbodyaccstdx	
+tbodyaccstdy	
+tbodyaccstdz	
+tgravityaccmeanx	
+tgravityaccmeany	
+tgravityaccmeanz	
+tgravityaccstdx	
+tgravityaccstdy	
+tgravityaccstdz	
+tbodyaccjerkmeanx	
+tbodyaccjerkmeany	
+tbodyaccjerkmeanz	
+tbodyaccjerkstdx	
+tbodyaccjerkstdy	
+tbodyaccjerkstdz	
+tbodygyromeanx	
+tbodygyromeany	
+tbodygyromeanz	
+tbodygyrostdx	
+tbodygyrostdy	
+tbodygyrostdz	
+tbodygyrojerkmeanx	
+tbodygyrojerkmeany	
+tbodygyrojerkmeanz	
+tbodygyrojerkstdx	
+tbodygyrojerkstdy	
+tbodygyrojerkstdz	
+tbodyaccmagmean	
+tbodyaccmagstd	
+tgravityaccmagmean	
+tgravityaccmagstd	
+tbodyaccjerkmagmean	
+tbodyaccjerkmagstd	
+tbodygyromagmean	
+tbodygyromagstd	
+tbodygyrojerkmagmean	
+tbodygyrojerkmagstd	
+fbodyaccmeanx	
+fbodyaccmeany	
+fbodyaccmeanz	
+fbodyaccstdx	
+fbodyaccstdy	
+fbodyaccstdz	
+fbodyaccjerkmeanx	
+fbodyaccjerkmeany	
+fbodyaccjerkmeanz	
+fbodyaccjerkstdx	
+fbodyaccjerkstdy	
+fbodyaccjerkstdz	
+fbodygyromeanx	
+fbodygyromeany	
+fbodygyromeanz	
+fbodygyrostdx	
+fbodygyrostdy	
+fbodygyrostdz	
+fbodyaccmagmean	
+fbodyaccmagstd	
+fbodybodyaccjerkmagmean	
+fbodybodyaccjerkmagstd	
+fbodybodygyromagmean	
+fbodybodygyromagstd	
+fbodybodygyrojerkmagmean	
+fbodybodygyrojerkmagstd
 
-```{r}
-str(dtTidy)
-```
 
-List the key variables in the data table
-----------------------------------------
+Feature Selection 
+=================
 
-```{r}
-key(dtTidy)
-```
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-Show a few rows of the dataset
-------------------------------
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-```{r}
-dtTidy
-```
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-Summary of variables
---------------------
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-```{r}
-summary(dtTidy)
-```
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
 
-List all possible combinations of features
-------------------------------------------
+The set of variables that were estimated from these signals are: 
 
-```{r}
-dtTidy[, .N, by=c(names(dtTidy)[grep("^feat", names(dtTidy))])]
-```
+mean(): Mean value
+std(): Standard deviation
 
-Save to file
-------------
-
-Save data table objects to a tab-delimited text file called `DSSmartphonesTidy.txt`.
-
-```{r save}
-f <- file.path(path, "DSSmartphonesTidy.txt")
-write.table(dtTidy, f, quote=FALSE, sep="\t", row.names=FALSE)
-```
-
+The complete list of variables of each feature vector is available in 'features.txt'
