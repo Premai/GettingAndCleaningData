@@ -28,9 +28,9 @@ Creates a second, independent tidy data set with the average of each variable fo
 knickr
 
 ## Files in this repo
-README.md -- this is the readme
-CodeBook.md -- codebook describing variables, the data and transformations
-run_analysis.R --  R code to create tidy data
+README.md -- this is the readme                           
+CodeBook.md -- codebook describing variables, the data and transformations          
+run_analysis.R --  R code to create tidy data       
 
 ## Things to consider before running script locally on your desktop
 Please download the script run_analysis.R and set the work directory to the folder in which the
