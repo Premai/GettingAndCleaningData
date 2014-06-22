@@ -31,6 +31,10 @@ knickr
 README.md -- this is the readme                           
 CodeBook.md -- codebook describing variables, the data and transformations          
 run_analysis.R --  R code to create tidy data       
+makeCodebook.Rmd -- To make the codebook from the R program    
+DSSmartphonesTidy.csv -- CSV format of the output file    
+DSSmartphonesTidy.txt -- txt format of the output file   
+UCI HAR Dataset  -- contains the folder with the unzipped files   
 
 ## Things to consider before running script locally on your desktop
 Please download the script run_analysis.R and set the work directory to the folder in which the
