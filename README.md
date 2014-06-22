@@ -4,10 +4,10 @@ GettingAndCleaningData
 Getting and Cleaning Data Project Assignment Repo
 
 ##Goal: 
-Demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
-1) a tidy data set 
-2) a link to a Github repository with run_analysis.R script for performing the analysis
-3) a code book that describes the variables, the data, and any transformations called CodeBook.md. 4) README.md that explains how the script work.
+Demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis.   
+1. a tidy data set   
+2. a link to a Github repository with run_analysis.R script for performing the analysis  
+3. a code book that describes the variables, the data, and any transformations called CodeBook.md.   4. README.md that explains how the script work.  
 
 Data collected from the accelerometers from the Samsung Galaxy S smartphone. 
 A full description is available at the site where the data was obtained:
@@ -25,7 +25,6 @@ Appropriately labels the data set with descriptive activity names.
 Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ## Packages used
-reshape2
 knickr
 
 ## Files in this repo
@@ -44,18 +43,19 @@ train/
 
 ## Output files created under the working directory
 Tidy dataset file DSSmartphonesTidy.csv (comma separated)
+DSSmartphonesTidy.txt (comma separated)
 codebook.md
 
 ##Script Flow
-(1) Read all the test and training files
-(2) Combine the files to a data frame in the form of subjects, labels ...
-(3) Read the features from features.txt and filter it to only leave features that are either means ("mean()") or standard deviations ("std()"). 
-(4) A new data frame is then created that includes subjects, labels and the features.
-(5) Read the activity labels from activity_labels.txt and replace the numbers with the text.
-(6) Make a list of columns (includig "subjects" and "label" at the start)
-(7) Tidy-up the list by removing non-alphanumeric character 
-(8) Apply the new list to the data frame
-(9) Create a new data frame by finding the mean for each combination of subject and label using aggregate() function
-(10) Write the tidied data set to a comma separated csv file
+* Read all the test and training files
+* Combine the files to a data frame in the form of subjects, labels ...
+* Read the features from features.txt and filter it to only leave features that are either means ("mean()") or standard deviations ("std()"). 
+* A new data frame is then created that includes subjects, labels and the features.
+* Read the activity labels from activity_labels.txt and replace the numbers with the text.
+* Make a list of columns (includig "subjects" and "label" at the start)
+* Tidy-up the list by removing non-alphanumeric character 
+* Apply the new list to the data frame
+* Create a new data frame by finding the mean for each combination of subject and label using aggregate() function
+* Write the tidied data set to a comma separated csv file
 
 

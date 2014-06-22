@@ -45,8 +45,12 @@ aggr.data <- aggregate(data.mean.std[, 3:ncol(data.mean.std)],
                        FUN=mean)
 
 # write the data for course upload
-f <- file.path(path, "DSSmartphonesTidy.csv")
+f <- file.path(path, "DSSmartphonesTidy.txt")
 write.table(aggr.data, f, row.names=F, sep = ",",quote=F)
+
+fc <- file.path(path, "DSSmartphonesTidy.csv")
+write.table(aggr.data, fc, row.names=F, sep = ",",quote=F)
+
 
 #Make codebook
 knit("makeCodebook.Rmd", output = "codebook.md", encoding = "ISO8859-1", quiet = TRUE)

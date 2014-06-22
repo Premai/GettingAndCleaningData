@@ -1,6 +1,6 @@
 Codebook
 ========
-Codebook was generated on 2014-06-22 14:20:16 during the same process that generated the dataset. 
+Codebook was generated on 2014-06-22 15:30:00 during the same process that generated the dataset. 
 
 Variable list and descriptions
 ------------------------------
